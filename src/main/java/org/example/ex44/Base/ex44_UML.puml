@@ -1,0 +1,47 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+Class ReadJSON
+{
+    readJSONToProductWrapper()
+        productWrapper
+
+    readJSONToString()
+}
+
+Class OutputString
+{
+    String generateOutputString()
+}
+
+Class UserInput
+{
+    String getUserInput()
+}
+
+Class CheckProduct
+{
+    boolean checkForProduct
+}
+
+Class ProductWrapper
+{
+    <List> Products
+}
+Class Products
+{
+    String name
+    double price
+    int quantity
+
+    setters + getters
+    toString
+}
+
+Products -|> ProductWrapper
+ProductWrapper ---|> ReadJSON
+UserInput -|> ReadJSON
+ReadJSON -|> CheckProduct
+CheckProduct --|> OutputString
+
+@enduml

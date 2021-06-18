@@ -1,0 +1,16 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class ReadFile
+{
+        readFile()
+}
+class OutputString
+{
+        createStringArray(fileContent)
+        generateTableOutput(fileStringArray)
+}
+
+ReadFile --|> OutputString
+
+@enduml

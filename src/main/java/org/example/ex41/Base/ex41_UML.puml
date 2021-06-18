@@ -1,0 +1,48 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+
+class UserInput
+{
+    getUserString()
+        Scanner
+        return inputString
+}
+
+class ReadFile
+{
+        getFile(inputString)
+            return fileContentsString
+}
+
+class StringToList
+{
+        convertStringToList(fileContentsString)
+            return fileContentsList
+}
+
+class SortList
+{
+        sortFile(fileContentsList)
+            return sortedFileOutputList
+}
+
+class OutputString
+{
+       generateOutputString(sortedFileOutputList)
+             return outputString
+}
+
+class WriteFile
+{
+    generateOutputFile(outputString)
+
+}
+
+UserInput --|> ReadFile
+ReadFile --|> StringToList
+StringToList --|> SortList
+SortList --|> OutputString
+OutputString --|> WriteFile
+
+@enduml

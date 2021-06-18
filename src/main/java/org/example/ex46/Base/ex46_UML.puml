@@ -1,0 +1,47 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+Class ReadFile
+{
+      readFileToString()
+}
+
+
+Class ReplaceCertainChars
+{
+    replaceToSpaces(String fileContentString)
+        return replacesFileContentStr
+}
+
+Class SplitStringToStrArray
+{
+    generateStringArray(String replacedFileContentString)
+        return outputStringArr
+}
+Class ConvertStringArrToList
+{
+    convertStringArrToList(String[] outputStringArr)
+}
+
+Class CreateHistogramMap
+{
+    generateHistogramMap(List listOfWords)
+        return createdHistogramMap
+
+    sortHistogramMap(Map createdHistogramMap)
+        return sortedHistogramMap
+}
+
+Class OutputString
+{
+        generateOutputString(Map sortedHistogramMap)
+            return finalString;
+}
+
+ReadFile --|> ReplaceCertainChars
+ReplaceCertainChars --|> SplitStringToStrArray
+SplitStringToStrArray --|> ConvertStringArrToList
+ConvertStringArrToList --|> CreateHistogramMap
+CreateHistogramMap --|> CreateHistogramMap
+CreateHistogramMap --|> OutputString
+@enduml
